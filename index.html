@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ti.node.js by euforic</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ti.node.js</h1>
+        <p>Experimenting with porting node.js core to titanium.</p>
+
+        <p class="view"><a href="https://github.com/euforic/Ti.Node.js">View the Project on GitHub <small>euforic/Ti.Node.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/euforic/Ti.Node.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/euforic/Ti.Node.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/euforic/Ti.Node.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://raw.github.com/euforic/Ti.Node.js/master/Resources/iphone/appicon@2x.png" alt="ti.node.js"></p>
+
+<h1>Ti.Node.js</h1>
+
+<p>Experimenting trying to port node.js core modules to titanium.</p>
+
+<h2>Goal</h2>
+
+<p>Drop in usage of node.js core library with zero modification to core JS files</p>
+
+<h2>Contributing</h2>
+
+<ul>
+<li>Add missing globals to <code>Resources/node/index.js</code>
+</li>
+<li>Create missing Node Native module wrappers in the <code>Resources/node/src</code> directory make sure to use the same name as the real one</li>
+<li>Create Tests in <code>Resources/test/MODULE_NAME/TEST_NAME.js</code>
+</li>
+<li>Add non Titanium code needed for testing to the  <code>Resources/test/MODULE_NAME/TEST_NAME.js</code>
+</li>
+<li>Only comment out code in Node Core module files.</li>
+<li>If you add code put <code>// #TINODE_START</code> before and <code>// #TINODE_END</code> after so others know.</li>
+<li>Add Completed module to <code>REAME.md</code>
+</li>
+</ul><h2>API</h2>
+
+<h3>node.require</h3>
+
+<p>Use this to require node core modules. Located in <code>Resources/node/src</code>, Use module name only no directory path needed.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">'net'</span><span class="p">);</span>
+</pre></div>
+
+<h3>process.bind</h3>
+
+<p>Use this to require fake node native module. Located in <code>Resources/node/src</code>, Use module name only no directory path.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">TCP</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'tcp_wrap'</span><span class="p">).</span><span class="nx">TCP</span><span class="p">;</span>
+</pre></div>
+
+<h3>$NODE_PATH</h3>
+
+<p>Global constant for the node directory. Defaults to <code>node/</code></p>
+
+<div class="highlight"><pre><span class="nx">$NODE_PATH</span> <span class="o">=</span> <span class="s1">'mylib/node/'</span><span class="p">;</span>
+</pre></div>
+
+<h3>Node API</h3>
+
+<p>see <a href="http://nodejs.org/api/">Node.js API</a></p>
+
+<h3>Modules</h3>
+
+<p>Create issues for errors</p>
+
+<ul>
+<li>domain</li>
+<li>events</li>
+<li>utils</li>
+<li>assert</li>
+<li>net</li>
+</ul><h2>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2012 Christian Sullivan &lt;<a href="mailto:cs@euforic.co">cs@euforic.co</a>&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/euforic">euforic</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
