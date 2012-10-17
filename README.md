@@ -1,3 +1,4 @@
+![ti.node.js](https://raw.github.com/euforic/Ti.Node.js/master/Resources/iphone/appicon@2x.png)
 # Ti.Node.js
 Experimenting trying to port node.js core modules to titanium.
 
