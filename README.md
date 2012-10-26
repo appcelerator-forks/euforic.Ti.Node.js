@@ -5,6 +5,9 @@ Experimenting trying to port node.js core modules to titanium.
 ## Goal
 Drop in usage of node.js core library with zero modification to core JS files
 
+## Ports
+You can find many other node.js scripts ported to Titanium using [tipm](http://tipm.co)
+
 ## Contributing
   - Add missing globals to `Resources/node/index.js`
   - Create missing Node Native module wrappers in the `Resources/node/src` directory make sure to use the same name as the real one
